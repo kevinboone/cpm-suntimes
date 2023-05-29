@@ -1,0 +1,4 @@
+Have a configuration variable in suntimes.ini that determines when 
+daylight savings is in effect. This would remove the need to specify
+the UTC offset as a separate parameter.
+

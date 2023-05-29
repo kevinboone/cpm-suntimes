@@ -1,0 +1,41 @@
+suntimes -- show sunrise and sunset times, etc., on a CP/M system
+=================================================================
+
+Usage example
+-------------
+
+suntimes lat=51.51 long=0.118 offset=1 date=2023-5-29
+
+Some or all of the command-line arguments can be placed in a configuration
+file. The default configuration file is suntimes.ini in the current logged-in
+drive. This name and location can be overridden on the command line:
+
+suntimes /c f:suntimes.ini ...
+
+ROMWBW support
+--------------
+
+On a ROMWBW machine with real-time clock, suntimes defaults to using the
+current date for the calculation. Of course, this can be overridden on the
+command line.
+
+Date format
+-----------
+
+The date format is YYYY-MM-DD, and this is the only format recognized at
+present. If the time is read from a real-time clock, and the year is only two
+digits, 2000 is added to it. However, this isn't the case for the command line.
+
+UTC offset
+----------
+
+Because CP/M has no timezone database, the user must specify the offset from
+UTC (GMT) using the 'offset' command line option. This is the number of hours
+ahead of UTC, and can include a fraction.
+
+Latitude and longitude
+----------------------
+
+The 'lat' and 'long' arguments are signed fractional degrees. North of the
+equator is a positive longitude, east of Greenwich is a positive latitude. 
+
